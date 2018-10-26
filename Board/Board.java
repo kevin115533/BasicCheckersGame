@@ -25,6 +25,7 @@ public class Board{
 		System.out.println("   A   B   C   D   E   F   G   H");
 		System.out.println("   0   1   2   3   4   5   6   7");
 		for(int i = 0; i<8;i++){
+			System.out.print(" |   |   |   |   |   |   |   |   |\n");
 			System.out.print(i + "|");
 			for(int j=0;j<8;j++){
 				if(board[i][j] != null){
@@ -45,6 +46,7 @@ public class Board{
 				}
 			}
 			System.out.print("\n");
+			
 		}
 		System.out.println("   A   B   C   D   E   F   G   H");
 		System.out.println("   0   1   2   3   4   5   6   7");
