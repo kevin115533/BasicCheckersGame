@@ -22,26 +22,36 @@ public class Board{
 	}
 	
 	public void printBoard(){
-		System.out.println("   A  B  C  D  E  F  G  H");
-		System.out.println("   0  1  2  3  4  5  6  7");
+		System.out.println("   A   B   C   D   E   F   G   H");
+		System.out.println("   0   1   2   3   4   5   6   7");
 		for(int i = 0; i<8;i++){
 			System.out.print(i + "|");
 			for(int j=0;j<8;j++){
 				if(board[i][j] != null){
-				System.out.print(board[i][j]);
+					if(board[i][j].getId()<10){
+						System.out.print("_");
+						board[i][j].getColor();	
+						board[i][j].printPieceId();
+						System.out.print("|");
+					}
+					if(board[i][j].getId()>9){
+						board[i][j].getColor();	
+						board[i][j].printPieceId();
+						System.out.print("|");
+					}
 				}
 				if(board[i][j] == null){
-				System.out.print("__|");	
+				System.out.print("___|");	
 				}
 			}
 			System.out.print("\n");
 		}
-		System.out.println("   A  B  C  D  E  F  G  H");
-		System.out.println("   0  1  2  3  4  5  6  7");
+		System.out.println("   A   B   C   D   E   F   G   H");
+		System.out.println("   0   1   2   3   4   5   6   7");
 	}
 	
-	public void setSpot(int x, int y,CheckersPiece z){
-				board[y][x]=z;
+	public void setSpot(int y, int x,CheckersPiece z){
+				board[x][y]=z;
 			}
 	
 	public void setValidSpot(boolean x){
@@ -51,10 +61,6 @@ public class Board{
 	public boolean checkValid(){
 		return validSpot;	
 	}
-	
-	/*public Color getColor(){
-		return CheckersPiece.getColor();	
-	}*/
 	
 	/*public void makeMove(char z, int y, String a){
 		int x = 0;

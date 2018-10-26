@@ -17,13 +17,16 @@ public class CheckersPiece{
 		color = x;	
 	}
 
-	public Color getColor(){
-		return color;
+	public void getColor(){
+		System.out.print(color);
 	}
 	
+	public int getId(){
+		return id;	
+	}
 
-	public void printPiece(){
-		System.out.println(id);	
+	public void printPieceId(){
+		System.out.print(id);	
 	}
 	
 }
