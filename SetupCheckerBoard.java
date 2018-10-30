@@ -19,7 +19,7 @@ public class SetupCheckerBoard{
 				black[i] = new CheckersPiece(Color.B,i);
 			}
 		
-		//manually setting peices on board. Dont think theres a loop that could condense it down.
+		//manually setting pieces on board. Dont think theres a loop that could condense it down.
 		newGame.setSpot(1,0,red[0]);
 		newGame.setSpot(3,0,red[1]);
 		newGame.setSpot(5,0,red[2]);
@@ -44,8 +44,32 @@ public class SetupCheckerBoard{
 		newGame.setSpot(0,7,black[8]);
 		newGame.setSpot(2,7,black[9]);
 		newGame.setSpot(4,7,black[10]);
-		newGame.setSpot(5,7,black[11]);
+		newGame.setSpot(6,7,black[11]);
 		
 		newGame.printBoard();
+		
+		System.out.println("===================================");
+		System.out.println("Player Black turn. Make a move by entering piece number and then coordinates. Example: b1d3");
+		/*int a = input1.nextInt();
+		char b = input1.next().charAt(3);
+		int c = input1.nextInt();
+		int d = newGame.charConvert(b);*/
+		
+		String userMove = input1.nextLine();
+		char[] stringToArray = userMove.toCharArray();
+		int a = Character.getNumericValue(stringToArray[1]);
+		char b = stringToArray[2];
+		int c = Character.getNumericValue(stringToArray[3]);
+		int d = newGame.charConvert(b);
+		
+		//System.out.println(stringToArray[2]);
+		System.out.println("a = " + a+ " b = " + b+ " c = " + c + " d = " + d);
+		//System.out.println(d);
+		
+		newGame.setSpot(d,c,black[a]);
+		
+		
+		newGame.printBoard();
+		
 	}
 }

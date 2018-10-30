@@ -64,6 +64,37 @@ public class Board{
 		return validSpot;	
 	}
 	
+	public int charConvert(char a){
+		int x = 0;
+		switch (a){
+			case 'a' | 'A':
+				x = 0;
+				break;
+			case 'b' | 'B':
+				x = 1;
+				break;
+			case 'c' | 'C':
+				x = 2;
+				break;
+			case 'd' | 'D':
+				x = 3;
+				break;
+			case 'e' | 'E':
+				x = 4;
+				break;
+			case 'f' | 'F':
+				x = 5;
+				break;
+			case 'g' | 'G':
+				x = 6;
+				break;
+			case 'h' | 'H':
+				x = 7;
+				break;
+		}
+		return x;
+	}
+	
 	/*public void makeMove(char z, int y, String a){
 		int x = 0;
 		switch (z){
