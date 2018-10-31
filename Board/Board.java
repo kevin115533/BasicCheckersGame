@@ -52,9 +52,14 @@ public class Board{
 		System.out.println("   0   1   2   3   4   5   6   7");
 	}
 	
+	/*public void setSpot(int y, int x,CheckersPiece z){
+				board[x][y]=z;
+			}*/
+	
 	public void setSpot(int y, int x,CheckersPiece z){
 				board[x][y]=z;
 			}
+	
 	
 	public void setValidSpot(boolean x){
 		validSpot = x;	
@@ -94,38 +99,5 @@ public class Board{
 		}
 		return x;
 	}
-	
-	/*public void makeMove(char z, int y, String a){
-		int x = 0;
-		switch (z){
-			case 'a' | 'A':
-				x = 0;
-				break;
-			case 'b' | 'B':
-				x = 1;
-				break;
-			case 'c' | 'C':
-				x = 2;
-				break;
-			case 'd' | 'D':
-				x = 3;
-				break;
-			case 'e' | 'E':
-				x = 4;
-				break;
-			case 'f' | 'F':
-				x = 5;
-				break;
-			case 'g' | 'G':
-				x = 6;
-				break;
-			case 'h' | 'H':
-				x = 7;
-				break;
-		}
-		board[x][y] = a;
-		
-	}*/
-	
 	
 }
