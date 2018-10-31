@@ -6,6 +6,7 @@ public class SetupCheckerBoard{
 	public static void main (String[] args){
 		final int count = 12;
 		Scanner input1 = new Scanner(System.in);
+		boolean keepGoing = true;
 
 			Board newGame = new Board();
 			CheckersPiece[] black = new CheckersPiece[count];	
@@ -52,7 +53,8 @@ public class SetupCheckerBoard{
 			}
 		
 			newGame.printBoard();
-
+			
+		while(keepGoing == true){
 			System.out.println("===================================");
 			System.out.println("Player Black turn. Make a move by entering piece number and then coordinates. Example: b1d3");
 
@@ -65,18 +67,26 @@ public class SetupCheckerBoard{
 			
 			newGame.setSpotNull(black[a]);
 			black[a].setCoors(c,d);
-			
+			newGame.setSpot(black[a]);
 		
-			for(int i = 0;i<count;i++){
-				newGame.setSpot(red[i]);
-				newGame.setSpot(black[i]);
-			
-			}
-		
-			//newGame.setSpot(d,c,black[a]);
-
-
 			newGame.printBoard();
+			
 		
+			System.out.println("===================================");
+			System.out.println("Player Red turn. Make a move by entering piece number and then coordinates. Example: b1d3");
+
+			userMove = input1.nextLine();
+			stringToArray = userMove.toCharArray();
+			a = Character.getNumericValue(stringToArray[1]);
+			b = stringToArray[2];
+			c = Character.getNumericValue(stringToArray[3]);
+			d = newGame.charConvert(b);
+		
+			newGame.setSpotNull(red[a]);
+			red[a].setCoors(c,d);
+			newGame.setSpot(red[a]);		
+			
+			newGame.printBoard();
+		}
 	}
 }

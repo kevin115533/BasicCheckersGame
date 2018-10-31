@@ -23,7 +23,7 @@ public class Board{
 	
 	public void printBoard(){
 		System.out.println("   A   B   C   D   E   F   G   H");
-		System.out.println("   0   1   2   3   4   5   6   7");
+		//System.out.println("   0   1   2   3   4   5   6   7");
 		for(int i = 0; i<8;i++){
 			System.out.print(" |   |   |   |   |   |   |   |   |\n");
 			System.out.print(i + "|");
@@ -49,7 +49,7 @@ public class Board{
 			
 		}
 		System.out.println("   A   B   C   D   E   F   G   H");
-		System.out.println("   0   1   2   3   4   5   6   7");
+		//System.out.println("   0   1   2   3   4   5   6   7");
 	}
 	
 	public void setSpot(int y, int x,CheckersPiece z){

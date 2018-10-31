@@ -7,11 +7,6 @@ public class CheckersPiece{
 	private int column = 0;
 	
 	
-	/*public CheckersPiece(Color x, int y){
-		setColor(x);
-		setId(y);
-	}*/
-	
 	public CheckersPiece(Color x, int y, int a, int b){
 		setColor(x);
 		setId(y);
