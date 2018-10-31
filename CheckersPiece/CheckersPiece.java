@@ -35,6 +35,14 @@ public class CheckersPiece{
 			column = x;
 	}
 	
+	public int getRow(){
+		return row;	
+	}
+	
+	public int getColumn(){
+		return column;	
+	}
+	
 	public void getColor(){
 		System.out.print(color);
 	}

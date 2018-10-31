@@ -18,9 +18,14 @@ public class SetupCheckerBoard{
 			for(int i = 0;i<count;i++){
 				black[i] = new CheckersPiece(Color.B,i,0,0);
 			}
+						
+			red[0].setRow(1);
+			red[0].setColumn(0);
+		
+			newGame.setSpot(red[0]);
 		
 			//manually setting pieces on board. Dont think theres a loop that could condense it down.
-			newGame.setSpot(1,0,red[0]);
+			/*newGame.setSpot(1,0,red[0]);
 			newGame.setSpot(3,0,red[1]);
 			newGame.setSpot(5,0,red[2]);
 			newGame.setSpot(7,0,red[3]);
@@ -44,7 +49,7 @@ public class SetupCheckerBoard{
 			newGame.setSpot(0,7,black[8]);
 			newGame.setSpot(2,7,black[9]);
 			newGame.setSpot(4,7,black[10]);
-			newGame.setSpot(6,7,black[11]);
+			newGame.setSpot(6,7,black[11]);*/
 
 			newGame.printBoard();
 
@@ -60,7 +65,7 @@ public class SetupCheckerBoard{
 
 
 
-			newGame.setSpot(d,c,black[a]);
+			//newGame.setSpot(d,c,black[a]);
 
 
 			newGame.printBoard();

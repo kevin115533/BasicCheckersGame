@@ -52,11 +52,13 @@ public class Board{
 		System.out.println("   0   1   2   3   4   5   6   7");
 	}
 	
-	/*public void setSpot(int y, int x,CheckersPiece z){
-				board[x][y]=z;
-			}*/
-	
 	public void setSpot(int y, int x,CheckersPiece z){
+				board[x][y]=z;
+			}
+	
+	public void setSpot(CheckersPiece z){
+				int x = z.getRow();
+				int y = z.getColumn();
 				board[x][y]=z;
 			}
 	
