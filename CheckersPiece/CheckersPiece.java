@@ -15,8 +15,12 @@ public class CheckersPiece{
 	public CheckersPiece(Color x, int y, int a, int b){
 		setColor(x);
 		setId(y);
-		setRow(a);
-		setColumn(b);
+		setCoors(a,b);
+	}
+	
+	public void setCoors(int x, int y){
+		row = x;	
+		column = y;
 	}
 	
 	public void setId(int x){
@@ -25,14 +29,6 @@ public class CheckersPiece{
 
 	public void setColor(Color x){
 		color = x;	
-	}
-
-	public void setRow(int x){
-			row = x;
-	}
-	
-	public void setColumn(int x){
-			column = x;
 	}
 	
 	public int getRow(){

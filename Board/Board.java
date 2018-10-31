@@ -56,12 +56,18 @@ public class Board{
 				board[x][y]=z;
 			}
 	
+
 	public void setSpot(CheckersPiece z){
 				int x = z.getRow();
 				int y = z.getColumn();
 				board[x][y]=z;
 			}
 	
+	public void setSpotNull(CheckersPiece z){
+				int x = z.getRow();
+				int y = z.getColumn();
+				board[x][y]=null;
+	}
 	
 	public void setValidSpot(boolean x){
 		validSpot = x;	

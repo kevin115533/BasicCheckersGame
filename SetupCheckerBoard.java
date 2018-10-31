@@ -18,39 +18,39 @@ public class SetupCheckerBoard{
 			for(int i = 0;i<count;i++){
 				black[i] = new CheckersPiece(Color.B,i,0,0);
 			}
-						
-			red[0].setRow(1);
-			red[0].setColumn(0);
+			//manually setting piece coordinates. Couldnt think of a loop to condense it			
+			red[0].setCoors(0,1);
+			red[1].setCoors(0,3);
+			red[2].setCoors(0,5);
+			red[3].setCoors(0,7);
+			red[4].setCoors(1,0);
+			red[5].setCoors(1,2);
+			red[6].setCoors(1,4);
+			red[7].setCoors(1,6);
+			red[8].setCoors(2,1);
+			red[9].setCoors(2,3);
+			red[10].setCoors(2,5);
+			red[11].setCoors(2,7);
+			
+			black[0].setCoors(5,0);
+			black[1].setCoors(5,2);
+			black[2].setCoors(5,4);
+			black[3].setCoors(5,6);
+			black[4].setCoors(6,1);
+			black[5].setCoors(6,3);
+			black[6].setCoors(6,5);
+			black[7].setCoors(6,7);
+			black[8].setCoors(7,0);
+			black[9].setCoors(7,2);
+			black[10].setCoors(7,4);
+			black[11].setCoors(7,6);
 		
-			newGame.setSpot(red[0]);
+			for(int i = 0;i<count;i++){
+				newGame.setSpot(red[i]);
+				newGame.setSpot(black[i]);
+			
+			}
 		
-			//manually setting pieces on board. Dont think theres a loop that could condense it down.
-			/*newGame.setSpot(1,0,red[0]);
-			newGame.setSpot(3,0,red[1]);
-			newGame.setSpot(5,0,red[2]);
-			newGame.setSpot(7,0,red[3]);
-			newGame.setSpot(0,1,red[4]);
-			newGame.setSpot(2,1,red[5]);
-			newGame.setSpot(4,1,red[6]);
-			newGame.setSpot(6,1,red[7]);
-			newGame.setSpot(1,2,red[8]);
-			newGame.setSpot(3,2,red[9]);
-			newGame.setSpot(5,2,red[10]);
-			newGame.setSpot(7,2,red[11]);
-
-			newGame.setSpot(0,5,black[0]);
-			newGame.setSpot(2,5,black[1]);
-			newGame.setSpot(4,5,black[2]);
-			newGame.setSpot(6,5,black[3]);
-			newGame.setSpot(1,6,black[4]);
-			newGame.setSpot(3,6,black[5]);
-			newGame.setSpot(5,6,black[6]);
-			newGame.setSpot(7,6,black[7]);
-			newGame.setSpot(0,7,black[8]);
-			newGame.setSpot(2,7,black[9]);
-			newGame.setSpot(4,7,black[10]);
-			newGame.setSpot(6,7,black[11]);*/
-
 			newGame.printBoard();
 
 			System.out.println("===================================");
@@ -62,9 +62,17 @@ public class SetupCheckerBoard{
 			char b = stringToArray[2];
 			int c = Character.getNumericValue(stringToArray[3]);
 			int d = newGame.charConvert(b);
-
-
-
+			
+			newGame.setSpotNull(black[a]);
+			black[a].setCoors(c,d);
+			
+		
+			for(int i = 0;i<count;i++){
+				newGame.setSpot(red[i]);
+				newGame.setSpot(black[i]);
+			
+			}
+		
 			//newGame.setSpot(d,c,black[a]);
 
 
