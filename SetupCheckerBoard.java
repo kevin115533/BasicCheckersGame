@@ -56,13 +56,17 @@ public class SetupCheckerBoard{
 			
 		while(keepGoing == true){
 			System.out.println("===================================");
-			System.out.println("Player Black turn. Make a move by entering piece number and then coordinates. Example: b1d3");
-
+			//System.out.println("Player Black turn. Make a move by entering piece number and then coordinates. Example: b1d3");
+			
+			System.out.print("Player Black turn, pick a piece number to move: ");
+			int a = input1.nextInt();
+			input1.nextLine();
+			
+			System.out.print("Pick a coordiate to move to. Example: G5 ");				 
 			String userMove = input1.nextLine();
 			char[] stringToArray = userMove.toCharArray();
-			int a = Character.getNumericValue(stringToArray[1]);
-			char b = stringToArray[2];
-			int c = Character.getNumericValue(stringToArray[3]);
+			char b = stringToArray[0];
+			int c = Character.getNumericValue(stringToArray[1]);
 			int d = newGame.charConvert(b);
 			
 			newGame.setSpotNull(black[a]);
@@ -73,13 +77,15 @@ public class SetupCheckerBoard{
 			
 		
 			System.out.println("===================================");
-			System.out.println("Player Red turn. Make a move by entering piece number and then coordinates. Example: b1d3");
-
+			System.out.print("Player Red turn, pick a piece number to move: ");
+			a = input1.nextInt();
+			input1.nextLine();
+			
+			System.out.print("Pick a coordiate to move to. Example: G5 ");				 
 			userMove = input1.nextLine();
 			stringToArray = userMove.toCharArray();
-			a = Character.getNumericValue(stringToArray[1]);
-			b = stringToArray[2];
-			c = Character.getNumericValue(stringToArray[3]);
+			b = stringToArray[0];
+			c = Character.getNumericValue(stringToArray[1]);
 			d = newGame.charConvert(b);
 		
 			newGame.setSpotNull(red[a]);
