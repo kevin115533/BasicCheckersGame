@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class SetupCheckerBoard{
 	public static void main (String[] args){
 		final int count = 12;
+		int exceptionCounter = 0;
 		Scanner input1 = new Scanner(System.in);
 		boolean keepGoing = true;
 
@@ -55,8 +56,8 @@ public class SetupCheckerBoard{
 			newGame.printBoard();
 			
 		while(keepGoing == true){
+			//do{
 			System.out.println("===================================");
-			//System.out.println("Player Black turn. Make a move by entering piece number and then coordinates. Example: b1d3");
 			
 			System.out.print("Player Black turn, pick a piece number to move: ");
 			int a = input1.nextInt();
@@ -69,13 +70,19 @@ public class SetupCheckerBoard{
 			int c = Character.getNumericValue(stringToArray[1]);
 			int d = newGame.charConvert(b);
 			
-			newGame.setSpotNull(black[a]);
-			black[a].setCoors(c,d);
-			newGame.setSpot(black[a]);
+				try{
+					newGame.setSpotNull(black[a]);
+					black[a].setCoors(c,d);
+					newGame.setSpot(black[a]);
+					exceptionCounter = 1;
+					}
+				catch(ArrayIndexOutOfBoundsException ex){
+					System.out.println("Invalid piece or coordinate, try again");	
+					}
+			//}while(exceptionCounter==0);
 		
 			newGame.printBoard();
 			
-		
 			System.out.println("===================================");
 			System.out.print("Player Red turn, pick a piece number to move: ");
 			a = input1.nextInt();
@@ -87,10 +94,14 @@ public class SetupCheckerBoard{
 			b = stringToArray[0];
 			c = Character.getNumericValue(stringToArray[1]);
 			d = newGame.charConvert(b);
-		
-			newGame.setSpotNull(red[a]);
-			red[a].setCoors(c,d);
-			newGame.setSpot(red[a]);		
+			try{
+				newGame.setSpotNull(red[a]);
+				red[a].setCoors(c,d);
+				newGame.setSpot(red[a]);		
+				}
+			catch(ArrayIndexOutOfBoundsException ex){
+					System.out.println("Invalid piece or coordinate, try again");	
+					}
 			
 			newGame.printBoard();
 		}
