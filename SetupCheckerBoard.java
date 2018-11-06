@@ -1,6 +1,6 @@
 import CheckersPiece.*;
 import Board.*;
-import java.util.Scanner;
+import java.util.*;
 
 public class SetupCheckerBoard{
 	public static void main (String[] args){
@@ -8,7 +8,9 @@ public class SetupCheckerBoard{
 		String userMove;
 		char[] stringToArray;
 		char b;
-		int a,c,d;
+		int d = 0;
+		int c = 0;
+		int a = 0;
 		int exceptionCounter = 0;
 		Scanner input1 = new Scanner(System.in);
 		boolean keepGoing = true;
@@ -57,18 +59,28 @@ public class SetupCheckerBoard{
 			
 			}
 		
-			
-			
 		while(keepGoing == true){
 			do{
+				exceptionCounter = 0;
 				newGame.printBoard();	
 				System.out.println("================================================");
-				System.out.print("Player Black turn, pick a piece number to move: ");
-				a = input1.nextInt();
-				input1.nextLine();
-
+				do{
+					try{
+					System.out.print("Player Black turn, pick a piece number to move: ");
+					a = input1.nextInt();
+					input1.nextLine();
+					exceptionCounter = 1;	
+					}
+					catch(InputMismatchException ex){
+						System.out.println("Not a valid input. Input the piece number only");	
+					}
+				}while(exceptionCounter == 0);
+				
 				System.out.print("Pick a coordiate to move to. Example: G5 ");				 
-				userMove = input1.nextLine();
+				userMove = input1.nextLine();	
+				exceptionCounter = 0;
+				
+				
 				stringToArray = userMove.toCharArray();
 				b = stringToArray[0];
 				c = Character.getNumericValue(stringToArray[1]);
